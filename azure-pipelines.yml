@@ -20,5 +20,8 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- script: 'java -jar ./target/hello-0.1.jar > result.txt' 
-- script: 'cat ./result.txt'
+
+- script: 'java -jar ./target/hello-0.1.jar > $(System.DefaultWorkingDirectory)/target/result.txt' 
+
+- publish: $(System.DefaultWorkingDirectory)/target
+  
