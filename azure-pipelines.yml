@@ -22,6 +22,7 @@ steps:
     goals: 'package'
 
 - script: 'java -jar ./target/hello-0.1.jar > $(System.DefaultWorkingDirectory)/target/result.txt' 
+- script: 'cp .artifactignore $(System.DefaultWorkingDirectory)/target/.artifactignore'
 
 - publish: $(System.DefaultWorkingDirectory)/target
   
